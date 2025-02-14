@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "nodeman": "^1.1.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.0",
     "nodemon": "^3.1.9",
     "react-router-dom": "^7.1.5"
   },
