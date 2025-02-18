@@ -47,8 +47,8 @@ function header() {
           <a href="/about" className="text-slate-700 hover:text-slate-900 mx-2">
             About
           </a>
-          <a href="/sign" className="text-slate-700 hover:text-slate-900 mx-2">
-            Sign
+          <a href="/signin" className="text-slate-700 hover:text-slate-900 mx-2">
+            Signin
           </a>
         </nav>
       </div>
