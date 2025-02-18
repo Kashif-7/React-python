@@ -3,7 +3,7 @@
 export default function Signup() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md mt-[-50px]">
         <h1 className="text-2xl font-bold mb-6 text-center">Signup</h1>
         <form>
           <div className="mb-4">
