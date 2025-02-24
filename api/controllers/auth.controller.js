@@ -80,7 +80,7 @@ export const signin = async (req, res) => {
         // Respond with success message and token
         res.cookie('token', token, { httpOnly: true });
         // res.status(200).json(data);
-        res.status(200).json({ message: 'User signed in successfully' });
+        res.status(200).json({data });
         
     } catch (error) {
         console.error('Error during signin:', error);
