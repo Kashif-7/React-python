@@ -20,35 +20,65 @@ export default function Signin() {
 
 
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  
+  
+  //   try {
+  //     dispatch(userSigninRequest());
+     
+  //     const res = await fetch('http://localhost:5000/api/signin', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     const data = await res.json();
+  //     console.log(data);
+  //     if (res.ok) {
+  //       dispatch(userSigninSuccess(data));
+  //       // Navigate to the home page after successful signin
+  //       navigate('/home');
+  //     } else {
+  //       dispatch(userSigninFailure(data.message));
+        
+  //     }
+  //   } catch (error) {
+  //     // console.error('Error during signin:', error);
+  //     dispatch(userSigninFailure('Something went wrong', error.message));
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    console.log("Form Data before sending:", formData);  // Debugging line to check formData structure
   
     try {
       dispatch(userSigninRequest());
-     
-      const res = await fetch('/api/auth/signin', {
+  
+      const res = await fetch('http://localhost:5000/api/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
+  
       const data = await res.json();
-      console.log(data);
+      console.log("Response Data:", data);  // Check what data comes back from backend
+  
       if (res.ok) {
         dispatch(userSigninSuccess(data));
-        // Navigate to the home page after successful signin
         navigate('/home');
       } else {
-        dispatch(userSigninFailure(data.message));
-        
+        dispatch(userSigninFailure(data.message || 'Signin failed'));
       }
     } catch (error) {
-      // console.error('Error during signin:', error);
+      console.error('Error during signin:', error);
       dispatch(userSigninFailure('Something went wrong', error.message));
     }
   };
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

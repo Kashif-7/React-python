@@ -41,7 +41,7 @@ function header() {
           <FaSearch className="text-slate-600" />
         </form>
         <nav className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mt-2 sm:mt-0">
-          <a href="/" className="text-slate-700 hover:text-slate-900 mx-2">
+          <a href="/home" className="text-slate-700 hover:text-slate-900 mx-2">
             Home
           </a>
           <a href="/about" className="text-slate-700 hover:text-slate-900 mx-2">
