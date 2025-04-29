@@ -236,19 +236,47 @@ export default function Signup() {
     return true;
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!validateForm()) return;
+  //   try {
+  //     const res = await fetch('http://localhost:5000/api/register', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     const data = await res.json();
+  //     console.log(data);
+  //     if (res.ok) {
+  //       navigate('/signin');
+  //     } else {
+  //       setErrorMessage(data.message || 'Signup error');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error during signup:', error);
+  //     setErrorMessage('Error during signup');
+  //   }
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
+    
+    console.log("Form Data:", formData); // Log form data for debugging
+  
     try {
-      const res = await fetch('/api/auth/signup', {
+      const res = await fetch('http://localhost:5000/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData), // Make sure formData is being passed correctly
       });
+  
       const data = await res.json();
-      console.log(data);
+      console.log("Response Data:", data); // Log the response from the server
+  
       if (res.ok) {
         navigate('/signin');
       } else {
@@ -258,7 +286,8 @@ export default function Signup() {
       console.error('Error during signup:', error);
       setErrorMessage('Error during signup');
     }
-  }
+  };
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
